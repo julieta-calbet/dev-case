@@ -10,3 +10,14 @@ export async function createStatus(status: any) {
     return { error };
   }
 }
+
+export async function getAllStatus(eqId: string) {
+  try {
+    const data = await prisma.status.findMany({
+      where: { equipmentId: eqId },
+    });
+    return { data };
+  } catch (error) {
+    return { error };
+  }
+}

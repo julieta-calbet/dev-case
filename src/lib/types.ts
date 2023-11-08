@@ -15,3 +15,14 @@ export const orderSchema = z.object({
 });
 
 export type OrderType = z.infer<typeof orderSchema>;
+
+// Status
+export type StatusType = {
+  id: Number;
+  order: String;
+  status: string;
+  productionTime: Number;
+  startedAt: Date;
+  equipmentId?: String;
+  equipment?: EquipmentType;
+};
