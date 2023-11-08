@@ -8,6 +8,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { AddEquipment } from "@/components/view/addEquipment";
 import { getEquipments } from "@/lib/equipment";
 import Link from "next/link";
 
@@ -16,7 +17,7 @@ const Home = async () => {
 
   return (
     <div className="p-4">
-      {/* <AddEquipment /> */}
+      <AddEquipment />
       <Table className="dark:text-gray-400">
         <TableCaption>
           {all?.length === 0

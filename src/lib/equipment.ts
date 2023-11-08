@@ -1,4 +1,5 @@
 import { prisma } from "./prisma";
+import type { EquipmentType } from "./types";
 
 export async function getEquipments(limit?: number) {
   try {
@@ -8,5 +9,15 @@ export async function getEquipments(limit?: number) {
     return { data: all };
   } catch (error) {
     return { error };
+  }
+}
+
+export async function createEquipment(equipment: EquipmentType) {
+  try {
+    await prisma.equipment.create({ data: equipment });
+  } catch (error) {
+    {
+      error;
+    }
   }
 }
