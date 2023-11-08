@@ -9,6 +9,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { AddEquipment } from "@/components/view/addEquipment";
+import { AddOrder } from "@/components/view/addOrder";
 import { getEquipments } from "@/lib/equipment";
 import Link from "next/link";
 
@@ -56,8 +57,7 @@ const Home = async () => {
                 </Button>
               </TableCell>
               <TableCell className="p-4">
-                {/* <AddOrder {...equipment} /> */}
-                Add Order
+                <AddOrder {...equipment} />
               </TableCell>
             </TableRow>
           ))}

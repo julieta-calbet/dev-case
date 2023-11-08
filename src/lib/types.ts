@@ -7,3 +7,11 @@ export const equipmentSchema = z.object({
 });
 
 export type EquipmentType = z.infer<typeof equipmentSchema>;
+
+// Order
+export const orderSchema = z.object({
+  name: z.string().min(1, "Name is required"),
+  productionTime: z.coerce.number().min(1),
+});
+
+export type OrderType = z.infer<typeof orderSchema>;
