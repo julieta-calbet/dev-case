@@ -3,7 +3,7 @@
 import { addStatus } from "@/actions/addStatus";
 import { EquipmentType, OrderType, orderSchema } from "@/lib/types";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useRef, useState } from "react";
+import { Suspense, useRef, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { Button } from "../ui/button";
 import {
@@ -17,6 +17,7 @@ import {
 } from "../ui/dialog";
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
+import { EquipmentStatus } from "./equipmentStatus";
 
 export const AddOrder = (equipment: EquipmentType) => {
   const [allStatus, setAllStatus] = useState({});
@@ -37,6 +38,12 @@ export const AddOrder = (equipment: EquipmentType) => {
 
   return (
     <>
+      <Suspense fallback={"Loading ..."}>
+        <EquipmentStatus
+          status={allStatus}
+          widingTime={equipment.startingAndWindingTime}
+        />
+      </Suspense>
       <Dialog>
         <DialogTrigger asChild>
           <Button variant="outline" className="dark:text-blue-500">
@@ -87,7 +94,6 @@ export const AddOrder = (equipment: EquipmentType) => {
           </form>
         </DialogContent>
       </Dialog>
-      <span>{"Add live status"}</span>
     </>
   );
 };
