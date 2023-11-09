@@ -1,36 +1,26 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+The application has being built using NextJS 14 (app router with server actions), Typescript, Prisma, React Query, Tailwind, zod and https://ui.shadcn.com/ for ready-made components. I've also used Playwright as the end-to-end testing library.
 
 ## Getting Started
 
 First, run the development server:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm run db:reset
+pnpm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+You will be able to introduce a new Equipment with the `Add new equipment` button. After introducing `name` and `starting/widing up` time a new Equipment will be shown into the dashboard.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+You will be able to associate a new Order pressing into `Add new order` button. Automatically the status of the equipment will be refreshed and updated from red, yellow and green following the `processing time` and `starting/widing up` times.
 
-## Learn More
+Also, pressing under `See equipment's history` you will be able to see (in a new page) the registry of status updates for the specific equipment.
 
-To learn more about Next.js, take a look at the following resources:
+To run Playwritght tests:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```bash
+pnpm run db:reset
+pnpm run dev (Make sure the app is running in http://localhost:3000)
+pnpm run test
+```
