@@ -46,7 +46,7 @@ const Home = async () => {
               <TableCell className="name p-4 dark:text-white font-semibold">
                 {equipment.name}
               </TableCell>
-              <TableCell className="name p-4 dark:text-white font-semibold">
+              <TableCell className="p-4 dark:text-white font-semibold">
                 {equipment.startingAndWindingTime}
               </TableCell>
               <TableCell className="p-4">

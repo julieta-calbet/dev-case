@@ -33,7 +33,7 @@ export const EquipmentStatus = ({
         style={{ backgroundColor: colors[index] }}
         className="h-2.5 w-2.5 rounded-full  mr-2"
       ></div>
-      {index != 3 && status.order}
+      {index != 3 && <span className="status">{status.order}</span>}
     </div>
   );
 };
